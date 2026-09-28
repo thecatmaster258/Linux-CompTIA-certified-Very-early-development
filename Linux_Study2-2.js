@@ -49,7 +49,17 @@ function formatColors(text) {
     .replaceAll("</y>", "</span>");
 
 }
+// Comming Soon
+AppendInfo("Comming_Soon","Commands","Short Description");
+AppendInfo("Comming_Soon","chsh","change shell, it lets you specify what shell(bash) you want to use<br><p>-s</p> {<r>File path</r>} Provides path to requested shell    <br><p>-l</p> lists all avalable shells");
+AppendInfo("Comming_Soon","alias","in ~bashrc  it provides command shortcuts<br>alias ll='ls -alf'<br>now typing ll will run the command ls -alf ");
+AppendInfo("Comming_Soon",);
+AppendInfo("Comming_Soon");
+AppendInfo("Comming_Soon");
 
+
+
+// Lesson 1-1 Study Sheet
 
 AppendTable("t_1-1SS","#","Command","Description");
 AppendTable("t_1-1SS","1","ls {<r>Directory</r>}","<o>With dir argument</o> shows file in specified Dir<br><o>Without directory argument</o> shows files in current Dir<br><p>-l</p> Lists a lot of info including chmod perms, user IDs<br><p>-a</p> Lists all files including .hidden");
@@ -72,7 +82,7 @@ AppendTable("t_1-1SS","17",".","Represents the directory you are in");
 AppendTable("t_1-1SS","18","..","Represents/moves path to the previous Dir<br>/home/user  home would be previous");
 AppendTable("t_1-1SS","19","q or ctrl+c","Quits or Cancels current process");
 
-
+// Lesson 1-2 Commands
 
 AppendTable("t_1-2C","#","Command","Description");
 AppendTable("t_1-2C","1","<g>vim</g> {<r>filename</r>}","Powerful text editor, has modes, visual,insert,command");
@@ -84,6 +94,8 @@ AppendTable("t_1-2C","6","<g>su</g> -","Same as su - root, but lets you target i
 AppendTable("t_1-2C","7","exit","After su, loges you back in as yourself, exits");
 AppendTable("t_1-2C","8","<g>sudo</g> {<r>command</r>}","Lets you execute a single command with elevated permissions<br> as root if permission is allowed");
 
+// Lesson 1-2 Terms
+
 AppendInfo("t_1-2_TERMS","Terms/Concepts","Description");
 AppendInfo("t_1-2_TERMS","FHS","File System Hiarchy,File Hiarchy System, where Dir are located");
 AppendInfo("t_1-2_TERMS","Standard User","An Account suited for a normal user");
@@ -93,6 +105,7 @@ AppendInfo("t_1-2_TERMS","/home/<r>$username</r>","The home of a standard user")
 AppendInfo("t_1-2_TERMS","/etc","Directory holding most config files");
 AppendInfo("t_1-2_TERMS","/var/log","Dir holding log files");
 
+// Lesson 2-1 Commands
 
 AppendTable("t_2-1C","#","Command","Description");
 AppendTable("t_2-1C","1","tail {<r>filename</r>}","displays last 10 lines of a file<br><p>-n</p> {<r>number</r>} displays the last specified amount of lines");
@@ -106,11 +119,13 @@ AppendTable("t_2-1C","8","<g>deluser</g> {<r>username</r>}"," Interactive userde
 AppendTable("t_2-1C","9","<g>chage</g> <p>-l</p> {<r>username</r>}","Shows info about a users password and account status<br>passwd: last changed,expires,inactivity<br>Account Expires, Min/Max till passwd change how long till passwd change warning");
 AppendTable("t_2-1C","10","echo <r>$</r>","displays application exit code for the previous command<br>0 = the command ran successfully, any other number= error");
 
+// Lesson 2-1 Terms
+
 AppendInfo("t_2-1_TERMS","Terms/Concepts","Description");
 AppendInfo("t_2-1_TERMS","/etc/passwd","file holding usernames, IDs and more");
 AppendInfo("t_2-1_TERMS","/etc/shadow","File holding hashed passwords of accounts<br>Each password hash is different");
 
-
+// Lesson 2-2 Commands
 
 AppendTable("t_2-2C","#","Command","Description");
 AppendTable("t_2-2C","1","<g>groupadd</g> {<r>groupname</r>}","Creates a group");
@@ -122,10 +137,65 @@ AppendTable("t_2-2C","6","<g>usermod</g> {<r>options</r>} {<r>option arguments</
 AppendTable("t_2-2C","7","ps","Displays info about currently running processes<br><p>-u</p> {<r>username</r>} Shows processes a user is using");
 AppendTable("t_2-2C","8","<g>killall</g> {<r>PID</r>}","kills/ends a process<br><p>-u</p> Kills a user process");
 
+// Lesson 2-2 Terms
+
 AppendInfo("t_2-2_TERMS","Term/concept","Description");
 AppendInfo("t_2-2_TERMS","/etc/group","A file that shows who is in what groups");
 AppendInfo("t_2-2_TERMS","#!/bin/bash","Used in the beginning of a Nash script<br>Tells the OS to use bash to interpret the script<br>Must be the first line");
 AppendInfo("t_2-2_TERMS","#","Begins a comment, user note<br>Bash ignores everything past a # on the same line");
 
+// Lesson 2-3 Study Sheet
+AppendTable("t_2-3SS","#","Command","Description");
+AppendTable("t_2-3SS","1","echo ${shell or environment variable}","   <br>HOSTNAME      <br>SHELL     <br>HOME     <br>PATH     <br>USER     <br>HISTSIZE     <br>HISTFILESIZE     <br>HISTCONTROL");
+AppendTable("t_2-3SS","2",'{Variable_name}="{value}"',"");
+AppendTable("t_2-3SS","3",'echo "${variable_name}"',"");
+AppendTable("t_2-3SS","4","locale","");
+AppendTable("t_2-3SS","5",'alias<br>{alias_name}="command" ',"");
+AppendTable("t_2-3SS","6","{alias_name}","");
+AppendTable("t_2-3SS","7","unalias {alias_name}","");
+AppendTable("t_2-3SS","8","chage {options} {username}","   <br><p>-l</p>   <br><p>-M</p> {<r>days</r>}    <br><p>-m</p> {<r>days</r>}    <br><p>-W</p> {<r>days</r>}     <br><p>-E</p> {<r>date</r>}   ");
+AppendTable("t_2-3SS","9","passwd {options} {username}","     <br><p>-d</p>      <br><p>-e</p>    <br><p>-l</p>      <br><p>-u</p>");
 
+// Lesson 2-3 TERMS
+AppendInfo("t_2-3_TERMS","Term/Concept","Description");
+AppendInfo("t_2-3_TERMS","Standerd user account");
+AppendInfo("t_2-3_TERMS","System/service account");
+AppendInfo("t_2-3_TERMS","root user account");
+AppendInfo("t_2-3_TERMS","shell");
+AppendInfo("t_2-3_TERMS","BASH");
+AppendInfo("t_2-3_TERMS","special prompt codes");
+AppendInfo("t_2-3_TERMS","login shell");
+AppendInfo("t_2-3_TERMS","interactive shell");
+AppendInfo("t_2-3_TERMS","profile configuration file");
+AppendInfo("t_2-3_TERMS","bashrc configuration file");
+AppendInfo("t_2-3_TERMS","/etc/skel");
+AppendInfo("t_2-3_TERMS","/etc/locale.conf");
+AppendInfo("t_2-3_TERMS","PAM","Pluggable Authentication Modules - handles much of the<br>authentication process and may enforce password rules");
+AppendInfo("t_2-3_TERMS","/etc/login.defs");
 
+// 2-4 Study Sheet
+AppendInfo("t_2-4SS","Term/Concept","Description");
+AppendInfo("t_2-4SS","sudo -l","");
+AppendInfo("t_2-4SS","/etc/sudoers","");
+AppendInfo("t_2-4SS","/etc/sudoers.d","");
+AppendInfo("t_2-4SS","wheel group","");
+AppendInfo("t_2-4SS","visudo","");
+AppendInfo("t_2-4SS","sudoedit","");
+
+// 3-1 Commands
+AppendInfo("t_3-1C","Term/Concept","Description");
+AppendInfo("t_3-1C","<g>chmod</g> {<r>absolute</r>} {<r>filename</r>}"," ");
+AppendInfo("t_3-1C","<g>chmod</g> u={<r>access</r>}, g={<r>access</r>}<br>o={<r>access</r>} {<r>filename</r>}"," ");
+AppendInfo("t_3-1C","umask","     <br><p>-S</p> "," ");
+AppendInfo("t_3-1C","chown {<r>newuser</r>}:{<r>newgroup</r>}<br>{<r>filename</r>}"," ");
+AppendInfo("t_3-1C","chgrp {<r>groupname</r>} {<r>filename</r>}"," ");
+AppendInfo("t_3-1C","isattr {<r>filename</r>}"," ");
+AppendInfo("t_3-1C","chattr {<r>attribute</r>} {<r>filename</r>}","   <br>+i or -i ");
+
+// 3-1 TERMS
+AppendInfo('t_3-1_TERMS',"Terms/Concepts","Description");
+AppendInfo('t_3-1_TERMS',"Absolute mode"," ");
+AppendInfo('t_3-1_TERMS',"Symbolic Mode"," ");
+AppendInfo('t_3-1_TERMS',"Least Privilege"," ");
+AppendInfo('t_3-1_TERMS',"Access Identities","user   <br>group   <br>others   ");
+AppendInfo('t_3-1_TERMS',"Permission Levels","read   <br>write   <br>execute  ");

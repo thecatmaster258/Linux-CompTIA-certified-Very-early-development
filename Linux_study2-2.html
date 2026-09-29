@@ -24,44 +24,44 @@
 
 	<!-- 1-1 Study Sheet -->
 		<h3 style=" margin:auto; text-align:center; color:red;">1-1 Study Sheet</h3>
-	<!-- Div holding all of lesion 1 -->
-	<div style="position: relative; right:80px;"> 
 	
-	
-	<table id="t_1-1SS" style="border:2px solid orangered; position: relative; width:50vw; align-self: center; margin-left: auto; margin-right: auto;">
+	<table id="t_1-1SS" style="border:2px solid orangered; width:50vw; align-self: center; margin-left: auto; margin-right: auto;">
 		<tbody>
 		</tbody>
 	</table> 
 	
 
 	<!--	 1-2 commands			 -->
+		 <!--  1-2C and 1-2Terms Side by side -->
+	<div class="table-container">
 
-	<div style="color:red; font-weight:bold; transform:translate(10vw,-1vh);">1-2 commands </div>
-	<table id="t_1-2C" style="border:2px solid orangered; position: relative; width:40vw; transform:translateX(5vw); ">
-		<tbody>
-		</tbody>
-	</table>
+		<div class="table-column">
+			<div style="color:red; font-weight:bold; ">1-2 commands </div>
+			<table id="t_1-2C" style="border:2px solid orangered; width:40vw;  ">
+				<tbody>
+				</tbody>
+			</table>
+		</div>
 	
-	<div style="position: relative; left:650px; bottom:309px; width:40vw;">
-
-	<table id="t_1-2_TERMS" style="border:2px solid orangered; width:40vw; transform:translateY(-21.5vh); ">
-		<tbody>
-		</tbody>
-	</table>
+		<div class="table-column">
+			<div style="color:red; font-weight:bold;">1-2 Terms</div>
+			<table id="t_1-2_TERMS" style="border:2px solid orangered; width:40vw; ">
+				<tbody>
+				</tbody>
+			</table> 
+		</div>
 
 	</div>
-</div>
-
 
 	<!-- 2-1 Study Sheet -->
 	 2-1 Study sheet
-	<table id="t_2-1C" style="border:2px solid orangered;">
+	<table id="t_2-1C" style="border:2px solid orangered; width:40vw;">
 		<tbody>
 		</tbody>
 	</table>
-
+	<!-- 2-2 Terms/Concepts -->
 		2-1 Terms/Concepts
-	<table id="t_2-1_TERMS" style="border:2px solid orangered;">
+	<table id="t_2-1_TERMS" style="border:2px solid orangered; width:40vw;">
 		<tbody>
 		</tbody>
 	</table>
@@ -180,19 +180,43 @@
 #yellow{color:yellow;}
 #blue{color:blue;}
 
-
 table {
 	width:100%;
 	border-collapse: collapse;
-	width:auto;
 	font-size:17px;
-
 }
-
 th, td{
 	border:1px solid orangered;
 	padding:5px 10px;
 	text-align: left;
 	line-height:1.2;
 }
+/* the rest was made with AI, i am not good enough for this */
+/* Container holding both table columns side-by-side */
+.table-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Individual table columns take equal width */
+.table-column {
+	flex: 1;
+	min-width: 0; /* Prevents flex items from overflowing */
+}
+.table-column table {
+  width: 100% !important; /* Table fills its column width */
+}
+/* Mobile responsive layout: Stack vertically on screens under 768px */
+@media (max-width: 768px) {
+  .table-container {
+    flex-direction: column;
+  }
+}
+/* End of AI creation */
+
+
+
 </style>

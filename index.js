@@ -50,12 +50,7 @@ function formatColors(text) {
 
 }
 // Comming Soon
-AppendInfo("Comming_Soon","Commands","Short Description");
-AppendInfo("Comming_Soon","chsh","change shell, it lets you specify what shell(bash) you want to use<br><p>-s</p> {<r>File path</r>} Provides path to requested shell    <br><p>-l</p> lists all avalable shells");
-AppendInfo("Comming_Soon","alias","in ~bashrc  it provides command shortcuts<br>alias ll='ls -alf'<br>now typing ll will run the command ls -alf ");
-AppendInfo("Comming_Soon",);
-AppendInfo("Comming_Soon");
-AppendInfo("Comming_Soon");
+
 
 
 
@@ -125,14 +120,14 @@ AppendInfo("t_2-1_TERMS","Terms/Concepts","Description");
 AppendInfo("t_2-1_TERMS","/etc/passwd","file holding usernames, IDs and more");
 AppendInfo("t_2-1_TERMS","/etc/shadow","File holding hashed passwords of accounts<br>Each password hash is different");
 
-// Lesson 2-2 Commands
+// Lesson 2-2 Study sheet
 
 AppendTable("t_2-2C","#","Command","Description");
 AppendTable("t_2-2C","1","<g>groupadd</g> {<r>groupname</r>}","Creates a group");
 AppendTable("t_2-2C","2","<g>sudo</g> !!","Runs the previous command as root superuser" );
 AppendTable("t_2-2C","3","<g>groupmod</g> {<r>options</r>} {<r>option arguments</r>} {<r>groupname</r>}","Modifies a group<br><p>-n</p> {<r>new-name</r>} Changes group name<br><p>-g</p> {<r>new-GID</r>} Changes groups ID ");
 AppendTable("t_2-2C","4", "<g>groupdel</g> {<r>groupname</r>}","Deletes a group");
-AppendTable("t_2-2C","5","groups {<r>username</r>} ","<o>With user argument</o> says what groups that user is in<br><o>With username argument</o> Displays everyone and what groups they are in")
+AppendTable("t_2-2C","5","groups {<r>username</r>} ","<o>With user argument</o> says what groups that user is in<br><o>Without username argument</o> Displays everyone and what groups they are in")
 AppendTable("t_2-2C","6","<g>usermod</g> {<r>options</r>} {<r>option arguments</r>} {<r>username</r>}","Modifies an existing account<br><p>-a</p> Appends, adds to user<br><p>-g</p> {<r>groupname</r>} changes users primary group, maingroup<br><p>-G</p> {<r>groupname</r>} Adds user to a group as supplementary<br>But removes him from all other supplementary groups<br><p>-aG</p> {<r>groupname</r>} adds user to group, as supplementary");
 AppendTable("t_2-2C","7","ps","Displays info about currently running processes<br><p>-u</p> {<r>username</r>} Shows processes a user is using");
 AppendTable("t_2-2C","8","<g>killall</g> {<r>PID</r>}","kills/ends a process<br><p>-u</p> Kills a user process");
@@ -146,32 +141,32 @@ AppendInfo("t_2-2_TERMS","#","Begins a comment, user note<br>Bash ignores everyt
 
 // Lesson 2-3 Study Sheet
 AppendTable("t_2-3SS","#","Command","Description");
-AppendTable("t_2-3SS","1","echo ${shell or environment variable}","   <br>HOSTNAME      <br>SHELL     <br>HOME     <br>PATH     <br>USER     <br>HISTSIZE     <br>HISTFILESIZE     <br>HISTCONTROL");
-AppendTable("t_2-3SS","2",'{Variable_name}="{value}"',"");
-AppendTable("t_2-3SS","3",'echo "${variable_name}"',"");
-AppendTable("t_2-3SS","4","locale","");
-AppendTable("t_2-3SS","5",'alias<br>{alias_name}="command" ',"");
-AppendTable("t_2-3SS","6","{alias_name}","");
-AppendTable("t_2-3SS","7","unalias {alias_name}","");
-AppendTable("t_2-3SS","8","chage {options} {username}","   <br><p>-l</p>   <br><p>-M</p> {<r>days</r>}    <br><p>-m</p> {<r>days</r>}    <br><p>-W</p> {<r>days</r>}     <br><p>-E</p> {<r>date</r>}   ");
-AppendTable("t_2-3SS","9","passwd {options} {username}","     <br><p>-d</p>      <br><p>-e</p>    <br><p>-l</p>      <br><p>-u</p>");
+AppendTable("t_2-3SS","1","echo ${<r>shell</r> or <r>environment variable</r>}","<r>HOSTNAME</r>: Displays systems Hostname<br><r>SHELL</r>: Displays the shell you are using<br><r>HOME</r>: Displays users home Dir<br><r>PATH</r>:Displays files where bash looks for commands<br><r>USER</r>:Displays who you are logged in as<br><r>HISTSIZE</r>: Max num of commands kept in current shell hist list<br><r>HISTFILESIZE</r>: Max num of lines saved in history<br><r>HISTCONTROL</r>: Set rules on what commands gets saved in history");
+AppendTable("t_2-3SS","2",'{<r>Variable_name</r>}="{<y>value</y>}"',"Makes a variable thats equal to value");
+AppendTable("t_2-3SS","3",'echo "${<r>variable_name</r>}"',"Displays what the Variable is equal to");
+AppendTable("t_2-3SS","4","locale","Shows current language and regional formating");
+AppendTable("t_2-3SS","5",'alias<br>{<r>alias_name</r>}="<y>command</y>" ',"Creates a command shortcut,<br>alias ll='ls -alf' running ll would run ls -alf ");
+AppendTable("t_2-3SS","6","{<r>alias_name</r>}","Runs your alias command shortcut");
+AppendTable("t_2-3SS","7","unalias {<r>alias_name</r>}","Removes a custom alias command");
+AppendTable("t_2-3SS","8","<g>chage</g> {<r>options</r>} {<r>username</r>}","Changes a users passwd ageing settings<br><p>-l</p> lists current passwd age settings<br><p>-M</p> {<r>days</r>} Changes Max num of days till passwd expires<br><p>-m</p> {<r>days</r>} Changes Min num of days till passwd expires<br><p>-W</p> {<r>days</r>} sets num of days till expired passwd gets a warning<br><p>-E</p> {<r>date</r>} Sets an account expiration date   ");
+AppendTable("t_2-3SS","9","passwd {<r>options</r>} {<r>username</r>}","Changes users passwd<br><p>-d</p> Deleats a users passwd<br><p>-e</p> immediately expires a users passwd<br><p>-l</p> locks passwd<br><p>-u</p> unlocks previously locked passwd");
 
 // Lesson 2-3 TERMS
 AppendInfo("t_2-3_TERMS","Term/Concept","Description");
-AppendInfo("t_2-3_TERMS","Standerd user account");
-AppendInfo("t_2-3_TERMS","System/service account");
-AppendInfo("t_2-3_TERMS","root user account");
+AppendInfo("t_2-3_TERMS","Standerd user account","an account for every day tasks with limited perms");
+AppendInfo("t_2-3_TERMS","System/service account","n account to run Services");
+AppendInfo("t_2-3_TERMS","root user account","The administrator account UID 0");
 AppendInfo("t_2-3_TERMS","shell");
-AppendInfo("t_2-3_TERMS","BASH");
+AppendInfo("t_2-3_TERMS","BASH","Born Again Shell, common linux command line shell");
 AppendInfo("t_2-3_TERMS","special prompt codes");
-AppendInfo("t_2-3_TERMS","login shell");
-AppendInfo("t_2-3_TERMS","interactive shell");
-AppendInfo("t_2-3_TERMS","profile configuration file");
-AppendInfo("t_2-3_TERMS","bashrc configuration file");
-AppendInfo("t_2-3_TERMS","/etc/skel");
-AppendInfo("t_2-3_TERMS","/etc/locale.conf");
+AppendInfo("t_2-3_TERMS","login shell","A shell started as a login session;reads login startup files");
+AppendInfo("t_2-3_TERMS","interactive shell","A shell where a user enters a commmand as a prompt");
+AppendInfo("t_2-3_TERMS","profile configuration file","Login shell settings<br>/etc/profile - System-wide.<br>~/.profile - User-specific, when selected by the shell");
+AppendInfo("t_2-3_TERMS","bashrc configuration file","Interactive bash settings, such as aliases and prompts<br>/etc/bashrc or /etc/bash.bashrc - System-wide<br>~/.bashrc - User-specific");
+AppendInfo("t_2-3_TERMS","/etc/skel","Template files copied into newly created home Dir");
+AppendInfo("t_2-3_TERMS","/etc/locale.conf","System-wide language and regional settings on ditributions that use it");
 AppendInfo("t_2-3_TERMS","PAM","Pluggable Authentication Modules - handles much of the<br>authentication process and may enforce password rules");
-AppendInfo("t_2-3_TERMS","/etc/login.defs");
+AppendInfo("t_2-3_TERMS","/etc/login.defs","Default account settings, including password ageing and UID/GID ranges");
 
 // 2-4 Study Sheet
 AppendInfo("t_2-4SS","Term/Concept","Description");

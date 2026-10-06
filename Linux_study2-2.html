@@ -18,18 +18,187 @@
 
 	<ul>
 		<li> <span id=red>Red</span> Variables ex <span id=red>$name {command} {file} {directory}</span> </li>
-		<li><span id=yellow>String </span> ex <span id=yellow>"My name is <span id=red>$name</span> What is yours?" </span>
-		<li><span id=green>Green</span> Main command  ex <span id=green>cat, mkdir, su </span> </li>
 		<li><span id=purple>Purple</span> Flags/Option  ex <span id=purple>-n, -aG, --recursive </span> </li>
+		<li><span id=yellow>String </span> ex <span id=yellow>"My name is <span id=red>$name</span> What is yours?" </span>
 		<li><span id=orange> Orange</span> Description Info ex <span id=orange> With no argument, with argument</span> </li>
+		<li><span id="blue">Blue</span> Abbreviation, Terms, or made term, ex <span id="blue">FHS BASH Standerd/Root user </span> </li>
+		<br>
+		<li><span id="gold">Gold</span> Commands & with sub commands, ex <span id="gold">systemctl status</span>
+		<li><span id=green>Green</span> Main command  ex <span id=green>cat, mkdir, su, touch </span> </li>
+		<li><span id="brown">Brown</span> Commands that in no way effects files, ex <span id="brown">ls less cd </span>
 	</li>
+	<br>
+	<span id="green">Green</span> and <span id="brown">Brown</span> are kind of a stretch, just bear with me 
+	<br>
 	<br>
 		Dir is short for directory
 		<br>
 		I will say arguments a lot, I say it out of pure instinct, i just mean info
-	<h1> <span style="color:orange;">Linux</span> C114 Study </h1>
 
-	<!-- 1-1 Study Sheet -->
+
+
+
+	<h1> <span style="color:orange;">Linux</span> C114 Study </h1>
+	<br>
+	More color will be added, im rushing
+	<br>
+<h3>Click any of the words below<br>to drop down their info </h3>
+
+	<!-- user/group commands -->
+	 <span class="UserGroup_C" style="background-color:rgba(128, 0, 128, 0.247);">User/Group Commands</span>
+	<fieldset style="border:1px dashed orange; display:none;" id="UserGroup_C"> 
+		<legend>User/group commands. useradd,mod, passwd groups</legend>
+		
+		<br>
+		<!-- adduser -->
+	<span id="green"> useradd/userdel adduser/deluser</span> very similar to each other
+		<br>
+		<g>adduser</g>/<g>deluser</g> is easier to say than useradd.userdel. meaning that its easier to execute, interactive
+		<ol>
+			<!-- Section useradd  -->
+			<li>useradd</li>
+			<ul> 
+				<li>Uses <g>useradd</g> {<pu>option</pu>} {<r>option_argument</r>} {<r>username</r>}</li>
+				<li>options, </li>
+				<ul>
+					<li> <pu>-c</pu> Adds a comment to the users account</li>
+					<li><pu>-e</pu> Adds a expiration date for the user </li>
+					<li><pu>-m</pu> Creates the users home Directory</li>
+					<li><pu>-s</pu> Specifies the shell the user should use</li>
+					<li><pu>-u</pu> Sets the users ID to specified</li>
+					<li><pu>-D</pu> Displays the default settings,  Doesnt require option_argument or username</li>
+				</ul>
+			</ul>
+			<!-- Section userdel -->
+		<li>userdel</li>
+		<ul>
+			<li>Removes a users account</li>
+			<li>USES <g>userdel</g> {<r>username</r>}</li>
+			<li>Options</li>
+			<ul>
+				<li><pu>-r</pu> Removes user and the Users Home Directory </li>
+			</ul>
+		</ul>
+		<!-- Section usermmod -->
+	<li>usermod </li>
+	<ul>
+		<li>Modifies an existing account</li>
+		<li>USES <g>usermod</g> {<pu>options</pu>} {<r>option argument</r>} {<r>username</r>}</li>
+		<li>Options</li>
+		<ul>
+			<li><pu>-c</pu> Adds a comment to the users account</li>
+			<li><pu>-e</pu> Adds an expiration date to the users account</li>
+			<li><pu>-a</pu> Appends, adds to user</li>
+			<li><pu>-g</pu> changes users primary/main group (only one)</li>
+			<li><pu>-G</pu> adds user to a group as a supplementary/secondary<br>without -a(append) it removes the user from all other supplementary groups</li>
+			<li><pu>-aG</pu> Appends to a users supplementary/secondary groups</li>
+		</ul>
+	</ul>
+	
+		<!-- Section groupadd -->
+	<li>groupadd</li>
+	<ul>
+		<li>adds a group.  thats all it does<br>im not adding uses if thats all it does</li>
+	</ul>
+	<!-- Section groupdel -->
+	<li>groupdel</li>
+	<ul>
+		<li>all it does is Delete a group</li>
+	</ul>
+	<!-- Section groupmod -->
+	<li>groupmod</li>
+	<ul>
+		<li>Modifies an existing group</li>
+		<li>USES <g>groupmod</g> {<pu>options</pu>} {<r>option arguments</r>} {<r>username</r>}</li>
+		<li>Options</li>
+		<ul>
+			<li><pu>-n</pu> {<r>newName</r>} {<r>oldName</r>} Changes groups name</li>
+			<li><pu>-g</pu> {<r>GID</r>} {<r>Name</r>} Changes a groups ID</li>
+		</ul>
+	</ul>
+	
+	<!-- Section passwd -->
+	<li><g>passwd</g></li>
+	<ul>
+		<li>Changes the password of a users account</li>
+		<li>USES <g>passwd</g> {<r>username</r>}</li>
+		<li>Options</li>
+		<ul>
+			<li><pu>--expire</pu> Immeditaly expires a users passwd</li>
+			<li><pu>-x</pu> Sets the max num of days a password will remain valid</li>
+			<li><pu>-n</pu> Sets the min number of days a passwd remains valid</li>
+			<li><pu>-w</pu> Num of days before a user with an expired passwd gets a warning</li>
+			<li><pu>-S</pu> Displays users passwd status</li>
+		</ul>
+	</ul>
+
+	<!-- Section chage -->
+	<li>chage <pu>-l</pu> {<r>username</r>}</li>
+	<ul>
+		<li>Shows info about a users passwd and account status<br>passwd: last changed,inactivity,expires,how long till passwd change warning<br>and account expire date</li>
+
+	</ul>
+</ol>
+	</fieldset>
+	<br>
+	<br>
+
+
+	<!--Reading,writing and maniplating files  -->
+	<span class="ReadWrite_C" style="background-color:rgba(128, 0, 0, 0.247);">Reading,writing / Manipulating Files</span>
+	<fieldset style="border:1px dashed orange; display:none;" id="ReadWrite_C">
+		<legend>Reading/writing to files</legend>
+		<ol>
+			<!-- Section Cat -->
+			<li>cat</li>
+			<ul>
+				<li>Displays the full contents of a file </li>
+			</ul>
+			<!-- Section head/tail -->
+			<li>head & tail</li>
+			<ul>
+				<li>Think of these as the cats body, cat displays the entire file<br>its top(head) is the top 10, and its bottom(tail) is the bottom 10</li>
+				<li>head displays the first 10 lines of a file</li>
+				<li>tail displays the last 10 lines of a file</li>
+				<li>Options</li>
+				<ul>
+					<li><pu>-n</pu> Lets you choose the ammount to display<br>tail -n 2 will display the last 2 , same logic with head with first 2</li>
+				</ul>
+			</ul>
+			<!-- Section less -->
+			<ul>
+				<li>less</li>
+				<ul>
+					<li>displays the first 10 lines, but also lets text based linux scroll up and down on the file</li>
+				</ul>
+			</ul>
+
+			<!-- Section touch -->
+			<li>touch & rm</li>
+			<ul>
+				<li>touch creates a file While rm ReMoves a file</li>
+			</ul>
+
+			<!-- Section chmod -->
+			<li>chmod   or Change Mode</li>
+			<ul>
+				<li>Lets a user change the permissions/Mode of a file read, write, execute</li>
+				<li>When writing a script you need to enable execute so you can achually run the file</li>
+				<li>Read=4 Write=2 Execute=1 </li>
+				<li>each step is multiplied by two so any combination of the numbers will only go to a specific modes</li>
+			</ul>
+		</ol>
+
+
+	</fieldset>
+
+
+
+	<!-- Test Button -->
+
+		<!-- <button id="test" style="position:absolute; background-color:green; color:red; text-align: right; text-align: center; width:5vw; height:5vw; font-size:xx-large;">Test</button> -->
+	
+		<!-- 1-1 Study Sheet -->
 		<h3 style=" margin:auto; text-align:center; color:red;">1-1 Study Sheet</h3>
 	
 	<table id="t_1-1SS" style="border:2px solid orangered; width:50vw; align-self: center; margin-left: auto; margin-right: auto;">
@@ -60,65 +229,103 @@
 
 	</div>
 
-	<!-- 2-1 Study Sheet -->
-	 2-1 Study sheet
-	<table id="t_2-1C" style="border:2px solid orangered; width:40vw;">
-		<tbody>
-		</tbody>
-	</table>
+	<!-- Div holding 2-1 & 2-2 Study Sheet -->
+	 <div class="table-container">
+
+		<!-- 2-1 Study Sheet -->
+		<div class="table-column">
+		2-1 Study sheet	
+			<table id="t_2-1C" style="border:2px solid orangered; width:40vw;">
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+			<!-- 	2-2 Study Sheet 		-->
+		<div class="table-column">	
+		2-2 Study Sheet
+		
+			<table id="t_2-2C" style="border:2px solid orangered; width:40vw;">
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<!-- Div holding 2-1 & 2-2 Terms/Concepts -->
+	<div class="table-container">
 	<!-- 2-2 Terms/Concepts -->
-		2-1 Terms/Concepts
-	<table id="t_2-1_TERMS" style="border:2px solid orangered; width:40vw;">
-		<tbody>
-		</tbody>
-	</table>
 
-	<!-- 	2-2 Study Sheet 		-->
-2-2 Study Sheet
+		<div class="table-column">
+				2-1 Terms/Concepts
+			<table id="t_2-1_TERMS" style="border:2px solid orangered; width:40vw;">
+				<tbody>
+				</tbody>
+			</table>
+		</div>
 
-	<table id="t_2-2C" style="border:2px solid orangered; width:40vw;">
-		<tbody>
-		</tbody>
-	</table>
-	2-2 Important Terms/concepts
-	<table id="t_2-2_TERMS" style="border:2px solid orangered; width:40vw;">
-		<tbody>
-		</tbody>
-	</table>
+	
+		<div class="table-column">
+			2-2 Important Terms/concepts
+			<table id="t_2-2_TERMS" style="border:2px solid orangered; width:40vw;">
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
 
-	<!--	2-3 Study sheet  -->
+	<br>
+	<br>
+	<!-- Div holding 2-3 StudySheet/Terms -->
+	<div class="table-container">
 
-	2-3 Study Sheet
-	<table id="t_2-3SS" style="border:2px solid orangered; width:60vw;">
-		<tbody>
-		</tbody>
-	</table>
-<!--  2-3 terms -->
-  2-3 Terms
-	<table id="t_2-3_TERMS" style="border:2px solid orangered; width:40vw;"> 
-		<tbody>
-		</tbody>
-	</table>
+			<!--	2-3 Study sheet  -->
+		<div class="table-column">
+			2-3 Study Sheet
+			<table id="t_2-3SS" style="border:2px solid orangered; width:50vw;">
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<!--  2-3 terms -->
+		<div class="table-column">
+		2-3 Terms
+			<table id="t_2-3_TERMS" style="border:2px solid orangered; width:40vw;"> 
+				<tbody>
+				</tbody>
+			</table>
+			</div>
+		</div>
+
 
 	<!-- 2-4 Study Sheet -->
-	 2-4 Study Sheet Comming this week
-	 <table id="t_2-4SS style= width:%40;">
+	 2-4 Study Sheet
+	 <table id="t_2-4SS" style="width:40vw;">
 		<tbody>
 		</tbody>
 	</table>
 
-	<!-- 3-1 Commands -->
-	 3-1 Commands Comming this week
-	<table id="t_3-1C" style="border:2px solid orangered; width:40vw;">
-		<tbody>
-		</tbody>
-	</table>
-	
-	3-1 Terms/Concepts Comming this week
-	<table id="t_3-1_TERMS" style="border:2px solid orangered; width:40vw;">
-		<tbody>
-		</tbody>
-	</table>
+	<!--  -->
+	<div class="table-container">
+		<!-- 3-1 Commands -->
+		<div class="table-column">
+			3-1 Commands Comming this week
+			<table id="t_3-1C" style="border:2px solid orangered; width:40vw;">
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- 3-1 Terms/Concepts -->
+		<div class="table-column">
+			3-1 Terms/Concepts Comming this week
+			<table id="t_3-1_TERMS" style="border:2px solid orangered; width:40vw;">
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
 
 	<!-- Command details   uses MY NOTES   NOT ON PAPER -->
 
@@ -151,12 +358,9 @@
 	</ul>
 	<br>
 
-	<span id="green"> useradd/userdel adduser/deluser</span>
-	<ul>
-		<li>These commands are very similar to each other</li>
-		<li>adduser/deluser has the command in order, its easier to remember and say, meaning the commands are easier, they are interactive  </li>
-		<li>useradd and userdel is more complicated to say, so it will be harder to execute, non interactive </li>
-	</ul>
+	
+
+
 	<br>
 
 	<span id="green">vim</span> known as <span id="blue">Visual Improved</span>
@@ -185,11 +389,22 @@
 #green{color:limegreen;}
 #yellow{color:yellow;}
 #blue{color:blue;}
+#gold{
+	color:gold;
+	font-weight:bolder;
+	}
+#brown{color:#a95e13;}
+
+r{color:red;}
+g{color:limegreen;}
+pu{color:purple;}
+
 
 table {
 	width:100%;
 	border-collapse: collapse;
 	font-size:17px;
+	background-color: rgba(166, 12, 172, 0.096);
 }
 th, td{
 	border:1px solid orangered;
@@ -222,7 +437,5 @@ th, td{
   }
 }
 /* End of AI creation */
-
-
 
 </style>

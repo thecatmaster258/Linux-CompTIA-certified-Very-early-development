@@ -46,7 +46,7 @@
 
 	<!-- user/group commands -->
 	 <span class="UserGroup_C" style="background-color:rgba(128, 0, 128, 0.247);">User/Group Commands</span>
-	<fieldset style="border:1px dashed orange; display:none;" id="UserGroup_C"> 
+	<fieldset id="UserGroup_C" style="border:1px dashed orange;  background-color:rgba(128, 128, 128, 0.164); display:none; " > 
 		<legend>User/group commands. useradd,mod, passwd groups</legend>
 		
 		<br>
@@ -146,7 +146,7 @@
 
 	<!--Reading,writing and maniplating files  -->
 	<span class="ReadWrite_C" style="background-color:rgba(128, 0, 0, 0.247);">Reading,writing / Manipulating Files</span>
-	<fieldset style="border:1px dashed orange; display:none;" id="ReadWrite_C">
+	<fieldset id="ReadWrite_C" style="border:1px dashed orange; background-color:rgba(128, 128, 128, 0.164); display:none;" >
 		<legend>Reading/writing to files</legend>
 		<ol>
 			<!-- Section Cat -->
@@ -187,6 +187,46 @@
 				<li>Read=4 Write=2 Execute=1 </li>
 				<li>each step is multiplied by two so any combination of the numbers will only go to a specific modes</li>
 			</ul>
+
+			<!-- Section nano -->
+			<li>nano</li>
+			<ul>
+				<li>Basic text editor, only one mode and thats insert</li>
+				<li>to save click ctrl+O to write out, then Enter</li>
+				<li>to exit click ctrl+X</li>
+			</ul>
+
+			<!-- Section vim -->
+			 <li>vim</li>
+			 <ul>
+				<li>Also known as Visual Improved, named after vi visual</li>
+				<li>A powerfull text editor, but more complicated to use</li>
+				<li>has 3 different modes, Insert,Command,Command line,</li>
+				<ol> 
+					<li>Command Mode</li>
+						<ul>
+							<li>You always start in command mode, to re-enter command mode at any time, click Esc</li>
+							<li>to move the cursor in command mode, you type hjkl , or for qwerty keybords, rember jk and the ones next to them</li>
+						</ul>
+				
+					<li>Insert Mode</li>
+					<ul>
+						<li>to enter Insert Mode type i while in command mode</li>
+						<li>This is where to can type characters on screen</li>
+					</ul>
+
+					<li>Command Line Mode</li>
+					<ul>
+						<li>To enter Command line mode Type : while in Command Mode</li>
+						<li>Command Line mode has many commands, but we only learned save and quit</li>
+						<li>To save type w to write to the file, then enter</li>
+						<li>To quit type q then enter</li>
+						<li>If you want to save and quit in the same command type wq then enter</li>
+					</ul>
+				</ol>
+
+			</ul>
+
 		</ol>
 
 
@@ -329,15 +369,7 @@
 
 	<!-- Command details   uses MY NOTES   NOT ON PAPER -->
 
-	<span id="green">cat</span> Known as <span id="blue">concatenate</span>
-	<ul>
-		<li>Reads the entire contents of a file in one long "chain"</li>
-		<li>Can write to a file with >> ex cat "Hello World!" >> welcome.txt"</li>
-	</ul>
-	<span id="green">head and tail</span>, I call the <span id="blue">Cats body</span>
-	<ul>
-		<li>Cat displays the entire file, meaning its head displays the top 10 lines, and its tail is the last 10 </li>
-	</ul>
+
 	<br>
 
 	</body>
@@ -363,12 +395,7 @@
 
 	<br>
 
-	<span id="green">vim</span> known as <span id="blue">Visual Improved</span>
-	<ul>
-		<li>A Powerful and complicated text editor </li>
-		<li>Has multiple modes, insert,Command,Command line(:) </li>
-		<li>begins in command mode, type i to enter insert, esc to go back to Command Mode, type : to ender Command line Mode</li>
-	</ul>
+
 
 	<table id="Comming_Soon" style="border:2px dotted green;">
 		<tbody>

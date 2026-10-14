@@ -7,6 +7,17 @@ console.log("JS Imported Correctly");
 //   window.open("https://google.com")
 // })
 
+// sidebar
+const toggleBtn = document.getElementById('sidebarToggle');
+const sidebar = document.getElementById('sidebar');
+
+toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+});
+// End of sidebar
+
+
+
 function changeVisibility(Id){
   let targetId = document.getElementById(Id);
   if(targetId.style.display === "none"){
@@ -224,18 +235,58 @@ AppendInfo("t_2-4SS","sudoedit","lets a authorized used to edit a protected file
 
 // 3-1 Commands
 AppendInfo("t_3-1C","Term/Concept","Description");
-AppendInfo("t_3-1C","<g>chmod</g> {<r>absolute</r>} {<r>filename</r>}"," ");
-AppendInfo("t_3-1C","<g>chmod</g> u={<r>access</r>}, g={<r>access</r>}<br>o={<r>access</r>} {<r>filename</r>}"," ");
-AppendInfo("t_3-1C","umask","     <br><p>-S</p> "," ");
-AppendInfo("t_3-1C","chown {<r>newuser</r>}:{<r>newgroup</r>}<br>{<r>filename</r>}"," ");
-AppendInfo("t_3-1C","chgrp {<r>groupname</r>} {<r>filename</r>}"," ");
-AppendInfo("t_3-1C","isattr {<r>filename</r>}"," ");
-AppendInfo("t_3-1C","chattr {<r>attribute</r>} {<r>filename</r>}","   <br>+i or -i ");
+AppendInfo("t_3-1C","<g>chmod</g> {<r>absolute</r>} {<r>filename</r>}","changes perms of a file/dir in number format<br>read=4 write=2 execute=1, any combination of the numbers will apply thoes perms<br>the first number is the owner of the file, second is the group that owns it, than others, 777 giveseveryone perms");
+AppendInfo("t_3-1C","<g>chmod</g> u={<r>access</r>}, g={<r>access</r>}<br>o={<r>access</r>} {<r>filename</r>}","Long version of chmod, u=owner/user g=group o=other<br>to perms are set with rwx, so g=r-x Will give that group read and execute perms");
+AppendInfo("t_3-1C","umask","<r>COME BACK TO<br>NEED MORE INFO</r><br>Changes all new files?  <br><pu>-S</pu> Displays its effect in Symbolic form ");
+AppendInfo("t_3-1C","chown {<r>newuser</r>}:{<r>newgroup</r>}<br>{<r>filename</r>}","Changes who, user/group owns a file/dir");
+AppendInfo("t_3-1C","chgrp {<r>groupname</r>} {<r>filename</r>}","Change Group, it specificly changes what group owns a file/dir");
+AppendInfo("t_3-1C","lsattr {<r>filename</r>}","Displays FileSystemAttribute");
+AppendInfo("t_3-1C","chattr {<r>attribute</r>} {<r>filename</r>}","Changes a files attrubute  <br>+ or - Plus means add Attr Minus Means subtract Attr<br>+i = read only, immuntible");
 
 // 3-1 TERMS
 AppendInfo('t_3-1_TERMS',"Terms/Concepts","Description");
-AppendInfo('t_3-1_TERMS',"Absolute mode"," ");
-AppendInfo('t_3-1_TERMS',"Symbolic Mode"," ");
-AppendInfo('t_3-1_TERMS',"Least Privilege"," ");
-AppendInfo('t_3-1_TERMS',"Access Identities","user   <br>group   <br>others   ");
-AppendInfo('t_3-1_TERMS',"Permission Levels","read   <br>write   <br>execute  ");
+AppendInfo('t_3-1_TERMS',"Absolute mode","chmod specify perms with numbers EX 775 4=read 2=write 1=execute");
+AppendInfo('t_3-1_TERMS',"Symbolic Mode","chmod specify perms with characters u=rwx g=r-x o=r-x");
+AppendInfo('t_3-1_TERMS',"Least Privilege","Giving users/processes only the access nedded for their tasks");
+AppendInfo('t_3-1_TERMS',"Access Identities","user the owner   <br>group users in the group that owns the file   <br>others everyone else   ");
+AppendInfo('t_3-1_TERMS',"Permission Levels","read: view a file  <br>write: write/type to a file   <br>execute: run a file as a script ");
+
+// 3-2 skipped
+
+
+// 3-3 Study Sheet
+AppendInfo('t_3-3SS',"Terms/Cnocepts","Description");
+AppendInfo('t_3-3SS',"getfacl {<r>filename</r>}","Gets the Files Access Control List");
+AppendInfo('t_3-3SS',"setfacl {<p>option</p> & ACL entry}<br>{filename or Directory name}<br><br>ACL entries, doesnt accept 777 number perms<br>u:username:r-x<br>g:groupname:--x","adds/removes acl entries on a file/dir<br><pu>-R</pu> applies to all in a file/dir. recursivly <br><pu>-m</pu> Modify acl <br><pu>-x</pu> removes acl <br><pu>-b</pu> Removes all acl from a file");
+
+// 3-3 Terms
+AppendInfo('t_3-3_TERMS',"Terms/Cnocepts","Description");
+AppendInfo('t_3-3_TERMS',"Access Control List","Specifies who specificly can rwx a file,<br>user/group specific");
+
+// 4-1 Study Sheet
+AppendInfo('t_4-1SS',"Command","Description");
+AppendInfo('t_4-1SS',"ls /","This Command is so simple I wont even explane it");
+AppendInfo('t_4-1SS',"stat {filename}","Displays detailed info about a file<br>size,perms,TimeStamp,inode num");
+AppendInfo('t_4-1SS',"file","Prints file type");
+AppendInfo('t_4-1SS',"ln {options {existing target} {new link name}","By default it hard links a file, doesnt break if linked file is removed<br><pu>-s</pu> soft links a file EX shortcut, link breaks if linked file is removed");
+AppendInfo('t_4-1SS',"find","searches files/Dir for matching name,<br>Wildcards should be enclosed in quotes");
+AppendInfo('t_4-1SS',"which","Shows path to command that was executed");
+AppendInfo('t_4-1SS',"wc","Word Count, EX word,line,FileName<br><pu>-l</pu> Only prints the lines<br><pu>-w</pu> Only prints word count");
+AppendInfo('t_4-1SS',"sort","Prints a file line by line thats sorted by the first char from A-Z 1-9<br><pu>-n</pu> Numeric value, sorts by the entire num instead of the first character<br><pu>-r</pu> Prints in Reverse order Z-A 9-1");
+AppendInfo('t_4-1SS',"cut","<r>Come back to<br>NEED MORE INFO</r>");
+AppendInfo('t_4-1SS',"diff <pu>-u</pu> {file1} {file2}","Compares 2 files and displays the difference<br><pu>-u</pu> User friendly, Pls just use it");
+AppendInfo('t_4-1SS',"uniq","By default it prints each line of a file and removes unique characters if they exist on the same line<br><pu>-c</pu> Shows how many times something exists");
+
+AppendInfo('t_4-1_TERMS',"Term/Concept","Description");
+AppendInfo('t_4-1_TERMS',"path","location of a file separated by /");
+AppendInfo('t_4-1_TERMS',"absolute path","Compleat path starting from root /  EX highest");
+AppendInfo('t_4-1_TERMS',"realitive path","Path starting from your current Dir");
+AppendInfo('t_4-1_TERMS',"inode","A fileSystem node that stores info about a file");
+AppendInfo('t_4-1_TERMS',"hard link","another filename that refures to the same inode<br>if original is removed the file still has its contents");
+AppendInfo('t_4-1_TERMS',"symbolic link","Shortcut<br>A separate file that points to another file or Dir<br>Link can stop working if orignal is removed ");
+
+
+
+
+
+

@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html style="background-color:black; color:white; font-size:20px;">
 
+	<button id="sidebarToggle" class="toggle-btn">☰</button>
+
+	<nav id="sidebar" class="sidebar">
+		<br>
+		<ul><a href="#t_1-1">1-1C</a> </ul>
+		<ul><a href="#t_1-2">1-2C</a> </ul>
+		<ul><a href="#t_2-1">2-1C</a> </ul>
+		<ul><a href="#t_2-2">2-2C</a> </ul>
+		<ul><a href="#t_2-3">2-3C</a> </ul>
+		<ul><a href="#t_3-1">3-1C</a> </ul>
+		<ul><a href="#t_3-3">3-3C</a> </ul>
+		<ul><a href="#t_4-1">4-1C</a> </ul>
+	</nav>
+
+
+
+
+
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -56,7 +75,7 @@
 		<g>adduser</g>/<g>deluser</g> is easier to say than useradd.userdel. meaning that its easier to execute, interactive
 		<ol>
 			<!-- Section useradd  -->
-			<li>useradd</li>
+			<li><g>useradd</g></li>
 			<ul> 
 				<li>Uses <g>useradd</g> {<pu>option</pu>} {<r>option_argument</r>} {<r>username</r>}</li>
 				<li>options, </li>
@@ -70,75 +89,75 @@
 				</ul>
 			</ul>
 			<!-- Section userdel -->
-		<li>userdel</li>
-		<ul>
-			<li>Removes a users account</li>
-			<li>USES <g>userdel</g> {<r>username</r>}</li>
-			<li>Options</li>
+			<li><g>userdel</g></li>
 			<ul>
-				<li><pu>-r</pu> Removes user and the Users Home Directory </li>
+				<li>Removes a users account</li>
+				<li>USES <g>userdel</g> {<r>username</r>}</li>
+				<li>Options</li>
+				<ul>
+					<li><pu>-r</pu> Removes user and the Users Home Directory </li>
+				</ul>
 			</ul>
-		</ul>
-		<!-- Section usermmod -->
-	<li>usermod </li>
-	<ul>
-		<li>Modifies an existing account</li>
-		<li>USES <g>usermod</g> {<pu>options</pu>} {<r>option argument</r>} {<r>username</r>}</li>
-		<li>Options</li>
-		<ul>
-			<li><pu>-c</pu> Adds a comment to the users account</li>
-			<li><pu>-e</pu> Adds an expiration date to the users account</li>
-			<li><pu>-a</pu> Appends, adds to user</li>
-			<li><pu>-g</pu> changes users primary/main group (only one)</li>
-			<li><pu>-G</pu> adds user to a group as a supplementary/secondary<br>without -a(append) it removes the user from all other supplementary groups</li>
-			<li><pu>-aG</pu> Appends to a users supplementary/secondary groups</li>
-		</ul>
-	</ul>
+			<!-- Section usermmod -->
+			<li><g>usermod</g></li>
+			<ul>
+				<li>Modifies an existing account</li>
+				<li>USES <g>usermod</g> {<pu>options</pu>} {<r>option argument</r>} {<r>username</r>}</li>
+				<li>Options</li>
+				<ul>
+					<li><pu>-c</pu> Adds a comment to the users account</li>
+					<li><pu>-e</pu> Adds an expiration date to the users account</li>
+					<li><pu>-a</pu> Appends, adds to user</li>
+					<li><pu>-g</pu> changes users primary/main group (only one)</li>
+					<li><pu>-G</pu> adds user to a group as a supplementary/secondary<br>without -a(append) it removes the user from all other supplementary groups</li>
+					<li><pu>-aG</pu> Appends to a users supplementary/secondary groups</li>
+				</ul>
+			</ul>
 	
-		<!-- Section groupadd -->
-	<li>groupadd</li>
-	<ul>
-		<li>adds a group.  thats all it does<br>im not adding uses if thats all it does</li>
-	</ul>
-	<!-- Section groupdel -->
-	<li>groupdel</li>
-	<ul>
-		<li>all it does is Delete a group</li>
-	</ul>
-	<!-- Section groupmod -->
-	<li>groupmod</li>
-	<ul>
-		<li>Modifies an existing group</li>
-		<li>USES <g>groupmod</g> {<pu>options</pu>} {<r>option arguments</r>} {<r>username</r>}</li>
-		<li>Options</li>
-		<ul>
-			<li><pu>-n</pu> {<r>newName</r>} {<r>oldName</r>} Changes groups name</li>
-			<li><pu>-g</pu> {<r>GID</r>} {<r>Name</r>} Changes a groups ID</li>
-		</ul>
-	</ul>
+			<!-- Section groupadd -->
+			<li><g>groupadd</g></li>
+			<ul>
+				<li>adds a group.  thats all it does<br>im not adding uses if thats all it does</li>
+			</ul>
+			<!-- Section groupdel -->
+			<li><g>groupdel</g></li>
+			<ul>
+				<li>all it does is Delete a group</li>
+			</ul>
+			<!-- Section groupmod -->
+			<li><g>groupmod</g></li>
+			<ul>
+				<li>Modifies an existing group</li>
+				<li>USES <g>groupmod</g> {<pu>options</pu>} {<r>option arguments</r>} {<r>username</r>}</li>
+				<li>Options</li>
+				<ul>
+					<li><pu>-n</pu> {<r>newName</r>} {<r>oldName</r>} Changes groups name</li>
+					<li><pu>-g</pu> {<r>GID</r>} {<r>Name</r>} Changes a groups ID</li>
+				</ul>
+			</ul>
 	
-	<!-- Section passwd -->
-	<li><g>passwd</g></li>
-	<ul>
-		<li>Changes the password of a users account</li>
-		<li>USES <g>passwd</g> {<r>username</r>}</li>
-		<li>Options</li>
-		<ul>
-			<li><pu>--expire</pu> Immeditaly expires a users passwd</li>
-			<li><pu>-x</pu> Sets the max num of days a password will remain valid</li>
-			<li><pu>-n</pu> Sets the min number of days a passwd remains valid</li>
-			<li><pu>-w</pu> Num of days before a user with an expired passwd gets a warning</li>
-			<li><pu>-S</pu> Displays users passwd status</li>
-		</ul>
-	</ul>
+			<!-- Section passwd -->
+			<li><g>passwd</g></li>
+			<ul>
+				<li>Changes the password of a users account</li>
+				<li>USES <g>passwd</g> {<r>username</r>}</li>
+				<li>Options</li>
+				<ul>
+					<li><pu>--expire</pu> Immeditaly expires a users passwd</li>
+					<li><pu>-x</pu> Sets the max num of days a password will remain valid</li>
+					<li><pu>-n</pu> Sets the min number of days a passwd remains valid</li>
+					<li><pu>-w</pu> Num of days before a user with an expired passwd gets a warning</li>
+					<li><pu>-S</pu> Displays users passwd status</li>
+				</ul>
+			</ul>
 
-	<!-- Section chage -->
-	<li>chage <pu>-l</pu> {<r>username</r>}</li>
-	<ul>
-		<li>Shows info about a users passwd and account status<br>passwd: last changed,inactivity,expires,how long till passwd change warning<br>and account expire date</li>
+			<!-- Section chage -->
+			<li><bn>chage</bn> <pu>-l</pu> {<r>username</r>}</li>
+			<ul>
+				<li>Shows info about a users passwd and account status<br>passwd: last changed,inactivity,expires,how long till passwd change warning<br>and account expire date</li>
 
-	</ul>
-</ol>
+			</ul>
+		</ol>
 	</fieldset>
 	<br>
 	<br>
@@ -150,12 +169,12 @@
 		<legend>Reading/writing to files</legend>
 		<ol>
 			<!-- Section Cat -->
-			<li>cat</li>
+			<li><g>cat</g></li>
 			<ul>
 				<li>Displays the full contents of a file </li>
 			</ul>
 			<!-- Section head/tail -->
-			<li>head & tail</li>
+			<li><bn>head</bn> & <bn>tail</bn></li>
 			<ul>
 				<li>Think of these as the cats body, cat displays the entire file<br>its top(head) is the top 10, and its bottom(tail) is the bottom 10</li>
 				<li>head displays the first 10 lines of a file</li>
@@ -167,20 +186,20 @@
 			</ul>
 			<!-- Section less -->
 			<ul>
-				<li>less</li>
+				<li><br>less</br></li>
 				<ul>
 					<li>displays the first 10 lines, but also lets text based linux scroll up and down on the file</li>
 				</ul>
 			</ul>
 
 			<!-- Section touch -->
-			<li>touch & rm</li>
+			<li><g>touch</g> & <g>rm</g></li>
 			<ul>
 				<li>touch creates a file While rm ReMoves a file</li>
 			</ul>
 
 			<!-- Section chmod -->
-			<li>chmod   or Change Mode</li>
+			<li><g>chmod</g>   or Change Mode</li>
 			<ul>
 				<li>Lets a user change the permissions/Mode of a file read, write, execute</li>
 				<li>When writing a script you need to enable execute so you can achually run the file</li>
@@ -188,8 +207,19 @@
 				<li>each step is multiplied by two so any combination of the numbers will only go to a specific modes</li>
 			</ul>
 
+			<!-- Section getfacl & setfacl -->
+			<li>getfacl & setfacl</li>
+			<ul>
+				<li>(Get/Set) FileAccessControlList</li>
+				<li>More specific & complicated version of chmod</li>
+				<li>lets you specify specific people & groups for permissions</li>
+				<li>USES setfacl {<pu>option</pu>}</li>
+				<li> <r>COME BACK</r> </li>
+			</ul>
+
+
 			<!-- Section nano -->
-			<li>nano</li>
+			<li><g>nano</g></li>
 			<ul>
 				<li>Basic text editor, only one mode and thats insert</li>
 				<li>to save click ctrl+O to write out, then Enter</li>
@@ -197,7 +227,7 @@
 			</ul>
 
 			<!-- Section vim -->
-			 <li>vim</li>
+			 <li><g>vim</g></li>
 			 <ul>
 				<li>Also known as Visual Improved, named after vi visual</li>
 				<li>A powerfull text editor, but more complicated to use</li>
@@ -226,6 +256,41 @@
 				</ol>
 
 			</ul>
+			<!-- Section visudo -->
+			<li>visudo</li>
+			<ul>
+				<li>A visual and safer way to edit the sudoers file</li>
+				<li>Checks for errors before you save the file, so you dont break sudo</li>
+			</ul>
+			<!-- Section sudoedit -->
+			<li>sudoedit</li>
+			<ul>
+				<li>Lets an authorized user edit a protected file</li>
+			</ul>
+			<!-- Section chown & chgrp  -->
+			<li>chown & chgrp</li>
+			<ul>
+				<li>changes who owns a file user and group</li>
+				<ul>
+					<li>chown USES  chown {newuser}:{new group} {filename}</li>		
+					<li>you can choose to only change the user or group by leaving that field blank</li>
+					<li>user only {newuser}:   Group only :{newgroup}</li>
+				</ul>
+				<li>chgrp only changes group ownership</li>
+			</ul>
+
+			<!-- Section chattr -->
+			<li>lsattr & chattr</li>
+			<ul>
+				<li>list & change attribute</li>
+				<li>Attributes are like settings to a file</li>
+				<li>USES chattr (+/-){attribute}</li>
+				<li>+ adds a attribute and - subtracts the attribute</li>
+				<ul>
+					<li>chattr +i stands for immuntible   read only</li>
+				</ul>
+			</ul>
+		
 
 		</ol>
 
@@ -239,7 +304,7 @@
 		<!-- <button id="test" style="position:absolute; background-color:green; color:red; text-align: right; text-align: center; width:5vw; height:5vw; font-size:xx-large;">Test</button> -->
 	
 		<!-- 1-1 Study Sheet -->
-		<h3 style=" margin:auto; text-align:center; color:red;">1-1 Study Sheet</h3>
+		<h3 id="t_1-1" style=" margin:auto; text-align:center; color:red;">1-1 Study Sheet</h3>
 	
 	<table id="t_1-1SS" style="border:2px solid orangered; width:50vw; align-self: center; margin-left: auto; margin-right: auto;">
 		<tbody>
@@ -252,7 +317,7 @@
 	<div class="table-container">
 
 		<div class="table-column">
-			<div style="color:red; font-weight:bold; ">1-2 commands </div>
+			<div id="t_1-2" style="color:red; font-weight:bold; ">1-2 commands </div>
 			<table id="t_1-2C" style="border:2px solid orangered; width:40vw;  ">
 				<tbody>
 				</tbody>
@@ -273,7 +338,7 @@
 	 <div class="table-container">
 
 		<!-- 2-1 Study Sheet -->
-		<div class="table-column">
+		<div class="table-column" id="t_2-1">
 		2-1 Study sheet	
 			<table id="t_2-1C" style="border:2px solid orangered; width:40vw;">
 				<tbody>
@@ -282,7 +347,7 @@
 		</div>
 
 			<!-- 	2-2 Study Sheet 		-->
-		<div class="table-column">	
+		<div id="t_2-2" class="table-column">	
 		2-2 Study Sheet
 		
 			<table id="t_2-2C" style="border:2px solid orangered; width:40vw;">
@@ -320,7 +385,7 @@
 	<div class="table-container">
 
 			<!--	2-3 Study sheet  -->
-		<div class="table-column">
+		<div id="t_2-3" class="table-column">
 			2-3 Study Sheet
 			<table id="t_2-3SS" style="border:2px solid orangered; width:50vw;">
 				<tbody>
@@ -340,7 +405,7 @@
 
 
 	<!-- 2-4 Study Sheet -->
-	 2-4 Study Sheet
+	 <span id="t_2-4">2-4 Study Sheet</span>
 	 <table id="t_2-4SS" style="width:40vw;">
 		<tbody>
 		</tbody>
@@ -349,7 +414,7 @@
 	<!--  -->
 	<div class="table-container">
 		<!-- 3-1 Commands -->
-		<div class="table-column">
+		<div id="t_3-1" class="table-column">
 			3-1 Commands Comming this week
 			<table id="t_3-1C" style="border:2px solid orangered; width:40vw;">
 				<tbody>
@@ -359,13 +424,48 @@
 
 		<!-- 3-1 Terms/Concepts -->
 		<div class="table-column">
-			3-1 Terms/Concepts Comming this week
+			3-1 Terms/Concepts 
 			<table id="t_3-1_TERMS" style="border:2px solid orangered; width:40vw;">
 				<tbody>
 				</tbody>
 			</table>
 		</div>
 	</div>
+
+	<!-- 3-2  skipped -->
+	<table id="t_3-2C" style="border:2px solid orangered; width:40vw;">
+		<tbody>
+		</tbody>
+	</table>
+
+	<!-- 3-3 Study sheet -->
+	 <span id="t_3-3">3-3 Study Sheet</span>
+	 <br>
+	 Commands
+	<table id="t_3-3SS" style="border:2px solid orangered; width:40vw;">
+		<tbody>
+		</tbody>
+	</table>
+
+		<!-- 3-3 TERMS/concepts -->
+		 3-3 terms/concepts
+	<table id="t_3-3_TERMS" style="border:2px solid orangered; width:40vw;">
+		<tbody>
+		</tbody>
+	</table>
+
+	<!-- 4-1 StudySheet -->
+	<span id="t_4-1">4-1 Commands</span>
+	<table id="t_4-1SS" style="border:2px solid orangered; width:40vw;">
+		<tbody>
+		</tbody>
+	</table>
+
+	4-1 Terms/concepts
+	<table id="t_4-1_TERMS" style="border:2px solid orangered; width:40vw;">
+		<tbody>
+		</tbody>
+	</table>
 
 	<!-- Command details   uses MY NOTES   NOT ON PAPER -->
 
@@ -410,6 +510,69 @@
 
 <style defer>
 
+html{
+	scroll-behavior: smooth;
+}
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    padding: 10px 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden off-screen */
+    padding: 20px;
+    z-index: 1000;
+    transition: left 0.3s ease; /* Smooth sliding effect */
+}
+
+/* When active class is added via JS, slide it into view */
+.sidebar.active {
+    left: 0;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+	color:orange;
+}
+
+.sidebar a:hover {
+    color: #0066cc;
+}
+.content {
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+section {
+    height: 100vh;
+    border-bottom: 1px solid #eee;
+    padding-top: 20px;
+}
+
+
+
 #red {color:red;}
 #orange{color:orange;}
 #purple{color:purple;}
@@ -425,6 +588,7 @@
 r{color:red;}
 g{color:limegreen;}
 pu{color:purple;}
+bn{color:#a95e13;}
 
 
 table {
